@@ -1,0 +1,1280 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/sofia/ontologies/2025/2/untitled-ontology-31"
+         xmlns="http://www.semanticweb.org/sofia/ontologies/2025/2/untitled-ontology-31#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+         xmlns:swrl2="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/sofia/ontologies/2025/2/untitled-ontology-31"/>
+
+<owl:ObjectProperty rdf:about="#имеет_диагностику">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+  <rdfs:range rdf:resource="#Диагностика"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#имеет_пол">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+  <rdfs:range rdf:resource="#Пол"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#имеет_пораженные_лимфоузлы">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+  <rdfs:range rdf:resource="#Пораженные_лимфоузлы"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#имеет_срок_заболевания">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+  <rdfs:range rdf:resource="#Срок_заболевания"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#имеет_стадию_заболевания">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#имеет_СКФ">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#имеет_ФИО">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#имеет_возраст">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#имеет_гемоглобин">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#имеет_дату_диагностики">
+  <rdfs:domain rdf:resource="#Диагностика"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#имеет_креатинин">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#имеет_номер_диагностики">
+  <rdfs:domain rdf:resource="#Диагностика"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#имеет_тромбоциты">
+  <rdfs:domain rdf:resource="#Пациенты"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+
+<owl:Class rdf:about="#Пациенты"/>
+
+<owl:Class rdf:about="#Диагностика"/>
+
+<owl:Class rdf:about="#Пол">
+  <rdfs:subClassOf rdf:resource="#клинические_факторы"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Пораженные_лимфоузлы">
+  <rdfs:subClassOf rdf:resource="#клинические_факторы"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Срок_заболевания">
+  <rdfs:subClassOf rdf:resource="#клинические_факторы"/>
+</owl:Class>
+
+<owl:Class rdf:about="#A">
+  <rdfs:subClassOf rdf:resource="#Стадии_заболевания"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Стадии_заболевания"/>
+
+<owl:Class rdf:about="#B">
+  <rdfs:subClassOf rdf:resource="#Стадии_заболевания"/>
+</owl:Class>
+
+<owl:Class rdf:about="#C">
+  <rdfs:subClassOf rdf:resource="#Стадии_заболевания"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Возраст">
+  <rdfs:subClassOf rdf:resource="#клинические_факторы"/>
+</owl:Class>
+
+<owl:Class rdf:about="#клинические_факторы"/>
+
+<owl:Class rdf:about="#Гемоглобин">
+  <rdfs:subClassOf rdf:resource="#лабораторные_показатели"/>
+</owl:Class>
+
+<owl:Class rdf:about="#лабораторные_показатели"/>
+
+<owl:Class rdf:about="#Креатинин">
+  <rdfs:subClassOf rdf:resource="#лабораторные_показатели"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Риски"/>
+
+<owl:Class rdf:about="#Риски_есть">
+  <rdfs:subClassOf rdf:resource="#Риски"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Рисков_нет">
+  <rdfs:subClassOf rdf:resource="#Риски"/>
+</owl:Class>
+
+<owl:Class rdf:about="#СКФ">
+  <rdfs:subClassOf rdf:resource="#клинические_факторы"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Тромбоциты">
+  <rdfs:subClassOf rdf:resource="#лабораторные_показатели"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Белов_Андрей_Евгеньевич_90c9c6">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_диагностику rdf:resource="#Диагностика_47edea"/>
+  <имеет_пол rdf:resource="#мужской"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#3_и_более_узлов"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.0</имеет_СКФ>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Белов Андрей Евгеньевич</имеет_ФИО>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">66</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">139</имеет_гемоглобин>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">137</имеет_креатинин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">245</имеет_тромбоциты>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_47edea">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">66</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T11:23:58.722</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">137</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#мужской">
+  <rdf:type rdf:resource="#Пол"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#3_и_более_узлов">
+  <rdf:type rdf:resource="#Пораженные_лимфоузлы"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#постановка_диагноза">
+  <rdf:type rdf:resource="#Срок_заболевания"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Борисов_Роман_Тимоеевич_fc04c7">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_диагностику rdf:resource="#Диагностика_82ce36"/>
+  <имеет_пол rdf:resource="#мужской"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#3_и_более_узлов"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">71.0</имеет_СКФ>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Борисов Роман Тимоеевич</имеет_ФИО>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">66</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">156</имеет_гемоглобин>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</имеет_креатинин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">265</имеет_тромбоциты>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_82ce36">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">71.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">66</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T10:57:58.784</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_0d24a6">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">38.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T10:53:54.196</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">137</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_2080c0">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">87.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T10:45:12.314</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_387dbc">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">63.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T10:50:56.798</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">116</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_58ac7b">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">67</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T11:28:32.929</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">156</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_65365b">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T11:25:33.749</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_92aa2a">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T11:25:45.219</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">156</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_9d2008">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#1_год"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">57</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T13:55:33.030</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">224</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1_год">
+  <rdf:type rdf:resource="#Срок_заболевания"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_d872c5">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">23.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T13:51:05.057</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">257</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_e95e1b">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T10:42:34.287</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_fa58b2">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">68</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-16T10:49:28.753</имеет_дату_диагностики>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">275</имеет_креатинин>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Дмитриев_Георгий_Антонович_371e88">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_диагностику rdf:resource="#Диагностика_9d2008"/>
+  <имеет_диагностику rdf:resource="#Диагностика_d872c5"/>
+  <имеет_пол rdf:resource="#мужской"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#3_и_более_узлов"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">23.0</имеет_СКФ>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Дмитриев Георгий Антонович</имеет_ФИО>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</имеет_гемоглобин>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">257</имеет_креатинин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</имеет_тромбоциты>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Евдокимов_Максим_Егорович_e4b86b">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_диагностику rdf:resource="#Диагностика_387dbc"/>
+  <имеет_пол rdf:resource="#мужской"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#3_и_более_узлов"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">63.0</имеет_СКФ>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Евдокимов Максим Егорович</имеет_ФИО>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</имеет_гемоглобин>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">116</имеет_креатинин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</имеет_тромбоциты>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ермаков_Александр_Иванович_3accb9">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_диагностику rdf:resource="#Диагностика_92aa2a"/>
+  <имеет_пол rdf:resource="#мужской"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#1_или_2_узла"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">43.0</имеет_СКФ>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ермаков Александр Иванович</имеет_ФИО>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">122</имеет_гемоглобин>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">156</имеет_креатинин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">178</имеет_тромбоциты>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1_или_2_узла">
+  <rdf:type rdf:resource="#Пораженные_лимфоузлы"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Лебедева_Анна_Ивановна_691b40">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_диагностику rdf:resource="#Диагностика_0d24a6"/>
+  <имеет_пол rdf:resource="#женский"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#1_или_2_узла"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">38.0</имеет_СКФ>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Лебедева Анна Ивановна</имеет_ФИО>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">142</имеет_гемоглобин>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">137</имеет_креатинин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">246</имеет_тромбоциты>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#женский">
+  <rdf:type rdf:resource="#Пол"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Новикова_Мирослава_Кирилловна_7ba837">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_диагностику rdf:resource="#Диагностика_58ac7b"/>
+  <имеет_пол rdf:resource="#женский"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#3_и_более_узлов"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30.0</имеет_СКФ>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Новикова Мирослава Кирилловна</имеет_ФИО>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">67</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">89</имеет_гемоглобин>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">156</имеет_креатинин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</имеет_тромбоциты>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Романов_Никита_Тимофеевич_074dbb">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_диагностику rdf:resource="#Диагностика_fa58b2"/>
+  <имеет_пол rdf:resource="#мужской"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#3_и_более_узлов"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20.0</имеет_СКФ>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Романов Никита Тимофеевич</имеет_ФИО>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">68</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</имеет_гемоглобин>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">275</имеет_креатинин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">118</имеет_тромбоциты>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Савельев_Михаил_Сергеевич_a13636">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_диагностику rdf:resource="#Диагностика_e95e1b"/>
+  <имеет_пол rdf:resource="#мужской"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#1_или_2_узла"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.0</имеет_СКФ>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Савельев Михаил Сергеевич</имеет_ФИО>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</имеет_гемоглобин>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</имеет_креатинин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">234</имеет_тромбоциты>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Филиппов_Дмитрий_Александрович_3e4e0d">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_диагностику rdf:resource="#Диагностика_2080c0"/>
+  <имеет_пол rdf:resource="#мужской"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#0_узлов"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">87.0</имеет_СКФ>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Филиппов Дмитрий Александрович</имеет_ФИО>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</имеет_гемоглобин>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76</имеет_креатинин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">220</имеет_тромбоциты>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#0_узлов">
+  <rdf:type rdf:resource="#Пораженные_лимфоузлы"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#2_года">
+  <rdf:type rdf:resource="#Срок_заболевания"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#3_года">
+  <rdf:type rdf:resource="#Срок_заболевания"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Борисов_Сергей_Александрович_0cdf8b">
+  <rdf:type rdf:resource="#Пациенты"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_пол rdf:resource="#мужской"/>
+  <имеет_пораженные_лимфоузлы rdf:resource="#3_и_более_узлов"/>
+  <имеет_диагностику rdf:resource="#Диагностика_737aab"/>
+  <имеет_диагностику rdf:resource="#Диагностика_17e482"/>
+  <имеет_ФИО rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Борисов Сергей Александрович</имеет_ФИО>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">34.0</имеет_СКФ>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</имеет_возраст>
+  <имеет_гемоглобин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">190</имеет_гемоглобин>
+  <имеет_тромбоциты rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">170</имеет_тромбоциты>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">187</имеет_креатинин>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_737aab">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#постановка_диагноза"/>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</имеет_номер_диагностики>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">34.0</имеет_СКФ>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">187</имеет_креатинин>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-29T18:36:24.883</имеет_дату_диагностики>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Диагностика_17e482">
+  <rdf:type rdf:resource="#Диагностика"/>
+  <имеет_срок_заболевания rdf:resource="#1_год"/>
+  <имеет_номер_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</имеет_номер_диагностики>
+  <имеет_СКФ rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</имеет_СКФ>
+  <имеет_креатинин rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">190</имеет_креатинин>
+  <имеет_возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59</имеет_возраст>
+  <имеет_дату_диагностики rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-29T18:44:06.479</имеет_дату_диагностики>
+</owl:NamedIndividual>
+
+<swrl:Variable rdf:about="#p"/>
+
+<swrl:Variable rdf:about="#h"/>
+
+<swrl:Variable rdf:about="#t"/>
+
+<swrl:Variable rdf:about="#skf"/>
+
+<swrl:Variable rdf:about="#srok"/>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Пациенты"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#имеет_СКФ"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#skf"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#имеет_срок_заболевания"/>
+                  <swrl:argument1 rdf:resource="#p"/>
+                  <swrl:argument2 rdf:resource="#постановка_диагноза"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:BuiltinAtom>
+                      <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                      <swrl:arguments>
+                        <rdf:List>
+                          <rdf:first rdf:resource="#skf"/>
+                          <rdf:rest>
+                            <rdf:List>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">76.0</rdf:first>
+                            </rdf:List>
+                          </rdf:rest>
+                        </rdf:List>
+                      </swrl:arguments>
+                    </swrl:BuiltinAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Рисков_нет"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Рисков_нет - постановка диагноза</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Пациенты"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#имеет_СКФ"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#skf"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#имеет_срок_заболевания"/>
+                  <swrl:argument1 rdf:resource="#p"/>
+                  <swrl:argument2 rdf:resource="#srok"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:BuiltinAtom>
+                      <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                      <swrl:arguments>
+                        <rdf:List>
+                          <rdf:first rdf:resource="#skf"/>
+                          <rdf:rest>
+                            <rdf:List>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">76.0</rdf:first>
+                            </rdf:List>
+                          </rdf:rest>
+                        </rdf:List>
+                      </swrl:arguments>
+                    </swrl:BuiltinAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Риски_есть"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Риски_есть</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Пациенты"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#имеет_гемоглобин"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#h"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                  <swrl:arguments>
+                    <rdf:List>
+                      <rdf:first rdf:resource="#h"/>
+                      <rdf:rest>
+                        <rdf:List>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</rdf:first>
+                        </rdf:List>
+                      </rdf:rest>
+                    </rdf:List>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#имеет_тромбоциты"/>
+                      <swrl:argument1 rdf:resource="#p"/>
+                      <swrl:argument2 rdf:resource="#t"/>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <swrl:AtomList>
+                      <rdf:first>
+                        <swrl:BuiltinAtom>
+                          <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                          <swrl:arguments>
+                            <rdf:List>
+                              <rdf:first rdf:resource="#t"/>
+                              <rdf:rest>
+                                <rdf:List>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</rdf:first>
+                                </rdf:List>
+                              </rdf:rest>
+                            </rdf:List>
+                          </swrl:arguments>
+                        </swrl:BuiltinAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <swrl:AtomList>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="#имеет_пораженные_лимфоузлы"/>
+                              <swrl:argument1 rdf:resource="#p"/>
+                              <swrl:argument2 rdf:resource="#3_и_более_узлов"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </swrl:AtomList>
+                      </rdf:rest>
+                    </swrl:AtomList>
+                  </rdf:rest>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#C"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Стадия C2</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Пациенты"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#имеет_гемоглобин"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#h"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                  <swrl:arguments>
+                    <rdf:List>
+                      <rdf:first rdf:resource="#h"/>
+                      <rdf:rest>
+                        <rdf:List>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</rdf:first>
+                        </rdf:List>
+                      </rdf:rest>
+                    </rdf:List>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#имеет_тромбоциты"/>
+                      <swrl:argument1 rdf:resource="#p"/>
+                      <swrl:argument2 rdf:resource="#t"/>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <swrl:AtomList>
+                      <rdf:first>
+                        <swrl:BuiltinAtom>
+                          <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                          <swrl:arguments>
+                            <rdf:List>
+                              <rdf:first rdf:resource="#t"/>
+                              <rdf:rest>
+                                <rdf:List>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</rdf:first>
+                                </rdf:List>
+                              </rdf:rest>
+                            </rdf:List>
+                          </swrl:arguments>
+                        </swrl:BuiltinAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <swrl:AtomList>
+                          <rdf:first>
+                            <swrl:BuiltinAtom>
+                              <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                              <swrl:arguments>
+                                <rdf:List>
+                                  <rdf:first rdf:resource="#t"/>
+                                  <rdf:rest>
+                                    <rdf:List>
+                                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">390</rdf:first>
+                                    </rdf:List>
+                                  </rdf:rest>
+                                </rdf:List>
+                              </swrl:arguments>
+                            </swrl:BuiltinAtom>
+                          </rdf:first>
+                          <rdf:rest>
+                            <swrl:AtomList>
+                              <rdf:first>
+                                <swrl:IndividualPropertyAtom>
+                                  <swrl:propertyPredicate rdf:resource="#имеет_пораженные_лимфоузлы"/>
+                                  <swrl:argument1 rdf:resource="#p"/>
+                                  <swrl:argument2 rdf:resource="#3_и_более_узлов"/>
+                                </swrl:IndividualPropertyAtom>
+                              </rdf:first>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </swrl:AtomList>
+                          </rdf:rest>
+                        </swrl:AtomList>
+                      </rdf:rest>
+                    </swrl:AtomList>
+                  </rdf:rest>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#B"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Стадия B</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Пациенты"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#имеет_гемоглобин"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#h"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                  <swrl:arguments>
+                    <rdf:List>
+                      <rdf:first rdf:resource="#h"/>
+                      <rdf:rest>
+                        <rdf:List>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</rdf:first>
+                        </rdf:List>
+                      </rdf:rest>
+                    </rdf:List>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#имеет_тромбоциты"/>
+                      <swrl:argument1 rdf:resource="#p"/>
+                      <swrl:argument2 rdf:resource="#t"/>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <swrl:AtomList>
+                      <rdf:first>
+                        <swrl:BuiltinAtom>
+                          <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                          <swrl:arguments>
+                            <rdf:List>
+                              <rdf:first rdf:resource="#t"/>
+                              <rdf:rest>
+                                <rdf:List>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</rdf:first>
+                                </rdf:List>
+                              </rdf:rest>
+                            </rdf:List>
+                          </swrl:arguments>
+                        </swrl:BuiltinAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <swrl:AtomList>
+                          <rdf:first>
+                            <swrl:IndividualPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="#имеет_пораженные_лимфоузлы"/>
+                              <swrl:argument1 rdf:resource="#p"/>
+                              <swrl:argument2 rdf:resource="#1_или_2_узла"/>
+                            </swrl:IndividualPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </swrl:AtomList>
+                      </rdf:rest>
+                    </swrl:AtomList>
+                  </rdf:rest>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#C"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Стадия C1</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Пациенты"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#имеет_СКФ"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#skf"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#имеет_срок_заболевания"/>
+                  <swrl:argument1 rdf:resource="#p"/>
+                  <swrl:argument2 rdf:resource="#3_года"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:BuiltinAtom>
+                      <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                      <swrl:arguments>
+                        <rdf:List>
+                          <rdf:first rdf:resource="#skf"/>
+                          <rdf:rest>
+                            <rdf:List>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65.0</rdf:first>
+                            </rdf:List>
+                          </rdf:rest>
+                        </rdf:List>
+                      </swrl:arguments>
+                    </swrl:BuiltinAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Рисков_нет"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Рисков_нет - 3 года</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Пациенты"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#имеет_СКФ"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#skf"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#имеет_срок_заболевания"/>
+                  <swrl:argument1 rdf:resource="#p"/>
+                  <swrl:argument2 rdf:resource="#2_года"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:BuiltinAtom>
+                      <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                      <swrl:arguments>
+                        <rdf:List>
+                          <rdf:first rdf:resource="#skf"/>
+                          <rdf:rest>
+                            <rdf:List>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.0</rdf:first>
+                            </rdf:List>
+                          </rdf:rest>
+                        </rdf:List>
+                      </swrl:arguments>
+                    </swrl:BuiltinAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Рисков_нет"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Рисков_нет - 2 года</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Пациенты"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#имеет_СКФ"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#skf"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#имеет_срок_заболевания"/>
+                  <swrl:argument1 rdf:resource="#p"/>
+                  <swrl:argument2 rdf:resource="#1_год"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:BuiltinAtom>
+                      <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                      <swrl:arguments>
+                        <rdf:List>
+                          <rdf:first rdf:resource="#skf"/>
+                          <rdf:rest>
+                            <rdf:List>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">75.0</rdf:first>
+                            </rdf:List>
+                          </rdf:rest>
+                        </rdf:List>
+                      </swrl:arguments>
+                    </swrl:BuiltinAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Рисков_нет"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Рисков_нет - 1 год</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Пациенты"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#имеет_гемоглобин"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#h"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                  <swrl:arguments>
+                    <rdf:List>
+                      <rdf:first rdf:resource="#h"/>
+                      <rdf:rest>
+                        <rdf:List>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</rdf:first>
+                        </rdf:List>
+                      </rdf:rest>
+                    </rdf:List>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#имеет_тромбоциты"/>
+                      <swrl:argument1 rdf:resource="#p"/>
+                      <swrl:argument2 rdf:resource="#t"/>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <swrl:AtomList>
+                      <rdf:first>
+                        <swrl:BuiltinAtom>
+                          <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                          <swrl:arguments>
+                            <rdf:List>
+                              <rdf:first rdf:resource="#t"/>
+                              <rdf:rest>
+                                <rdf:List>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</rdf:first>
+                                </rdf:List>
+                              </rdf:rest>
+                            </rdf:List>
+                          </swrl:arguments>
+                        </swrl:BuiltinAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <swrl:AtomList>
+                          <rdf:first>
+                            <swrl:BuiltinAtom>
+                              <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                              <swrl:arguments>
+                                <rdf:List>
+                                  <rdf:first rdf:resource="#t"/>
+                                  <rdf:rest>
+                                    <rdf:List>
+                                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">390</rdf:first>
+                                    </rdf:List>
+                                  </rdf:rest>
+                                </rdf:List>
+                              </swrl:arguments>
+                            </swrl:BuiltinAtom>
+                          </rdf:first>
+                          <rdf:rest>
+                            <swrl:AtomList>
+                              <rdf:first>
+                                <swrl:IndividualPropertyAtom>
+                                  <swrl:propertyPredicate rdf:resource="#имеет_пораженные_лимфоузлы"/>
+                                  <swrl:argument1 rdf:resource="#p"/>
+                                  <swrl:argument2 rdf:resource="#1_или_2_узла"/>
+                                </swrl:IndividualPropertyAtom>
+                              </rdf:first>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </swrl:AtomList>
+                          </rdf:rest>
+                        </swrl:AtomList>
+                      </rdf:rest>
+                    </swrl:AtomList>
+                  </rdf:rest>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#A"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Стадия A</rdfs:label>
+</swrl:Imp>
+
+
+</rdf:RDF>
